@@ -18,7 +18,7 @@
    <p v-pre>{{message}}</p>
    <hr>
    ●v-htmlディレクティブ
-   <p v-html="message2">{{message2}}</p>
+   <p v-html="message2"></p>
    <hr>
    ●v-cloakディレクティブ
    <p v-cloak>{{message}}</p>
@@ -27,7 +27,8 @@
    <p>{{message}}</p>
    <p v-text="message"></p>
    <hr>
-   ●JavaScript式
+   <h1>バインディング式</h1>
+   ●A：JavaScript式
    <p>{{message3}}</p>
    <p>{{number+1}}</p>
    <p>{{message3.split('').reverse().join('')}}</p>
@@ -35,8 +36,9 @@
    <p>{{ok ?message :''}}</p>
    <hr>
 
-   ●フィルタ（ローカルフィルタ、グローバルフィルタ）
+   ●B：フィルタ（ローカルフィルタ、グローバルフィルタ）
    <h2>Mustache</h2>
+   <!-- 式 | フィルタ名 -->
    <p>{{price | numberFormat}}</p>
    <h2>b-bind</h2>
    <input type="text" v-bind:value="price | numberFormat">

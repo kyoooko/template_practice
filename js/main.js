@@ -5,13 +5,14 @@
 
 // フィルタ（グローバルフィルタ）
 Vue.filter('numberFormat',function(value){
-  return value.toLocalString()
+  return value.toLocaleString()
 })
 // フィルタの連結（グローバルフィルタで作成。numberFormat'は上記を使用）
 Vue.filter('toUSD',function(jpy){
   return jpy/100
 })
 // フィルタの引数
+// substring(開始位置.抽出する長さ)。 textは引数に入れない。
 Vue.filter('readMore',function(text,length,suffix){
   return text.substring(0,length)+suffix
 })
@@ -23,7 +24,7 @@ var app = new Vue({
   data:{
     // v-onceディレクティブ,v-preディレクティブ,v-cloakディレクティブ,v-textディレクティブ
     message: 'Hello,vue.js!',
-    // v-htmlディレクティブ 
+    // v-htmlディレクティブ
     message2: 'Hello,<span style="color:red;">vue.js!</span>',
     // JavaScript式
     message3:'Hello,JavaScript式',
@@ -38,18 +39,18 @@ var app = new Vue({
     // v-bind省略記法
     url:'https://en.wikipedia.org/wiki/Lorem_ipsum'
   },
-
   methods:{
-    // v-onceディレクティブ 
-    clickHandler:function(event){
+    // v-onceディレクティブ
+    clickHandler: function(event){
+      // 文字の反転
       this.message = this.message.split('').reverse().join('')
     }
   },
 
-  // フィルタ（ローカルフィルタ）
+  // フィルタ（ローカルフィルタ）←グローバル記載したのでコメントアウトした
   filters:{
-    numberFormat: function(value){
-      return value.toLocaleString()
-    }
+    // numberFormat: function(value){
+    //   return value.toLocaleString()
+    // }
   }
 })
